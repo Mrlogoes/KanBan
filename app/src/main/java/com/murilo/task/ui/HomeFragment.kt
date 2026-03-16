@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.tabs.TabLayoutMediator
 import com.murilo.task.R
 import com.murilo.task.databinding.FragmentHomeBinding
+import com.murilo.task.ui.adapter.ViewPagerAdapter
 
 class HomeFragment : Fragment() {
 
@@ -20,6 +22,26 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initTabs()
+    }
+
+    private fun initTabs() {
+        val pageAdapter = ViewPagerAdapter(requiredActivity())
+        binding.viewPager.adapter=pageAdapter
+        pageAdapter.addFragment(TodoFragment(), R.string.status_todo)
+        pageAdapter.addFragment(TodoFragment(), R.string.status_doing)
+        pageAdapter.addFragment(TodoFragment(), R.string.status_done)
+
+        binding.viewPager.offscreenPageLimit = pageAdapter.itemCount
+
+        TabLayoutMediator(binding.tabs, binding.viewPager){ tab, position ->
+            tab.text = getString(pageAdapter.getTitle(position))
+        }
     }
 
     override fun onDestroyView() {

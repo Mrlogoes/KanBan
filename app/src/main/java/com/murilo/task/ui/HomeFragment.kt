@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import com.murilo.task.R
 import com.murilo.task.databinding.FragmentHomeBinding
@@ -31,11 +32,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun initTabs() {
-        val pageAdapter = ViewPagerAdapter(requiredActivity())
+        val pageAdapter = ViewPagerAdapter(requireActivity())
         binding.viewPager.adapter=pageAdapter
-        pageAdapter.addFragment(TodoFragment(), R.string.status_todo)
-        pageAdapter.addFragment(TodoFragment(), R.string.status_doing)
-        pageAdapter.addFragment(TodoFragment(), R.string.status_done)
+        pageAdapter.addFragment(TodoFragment(), R.string.status_task_todo)
+        pageAdapter.addFragment(TodoFragment(), R.string.status_task_doing)
+        pageAdapter.addFragment(TodoFragment(), R.string.status_task_done)
 
         binding.viewPager.offscreenPageLimit = pageAdapter.itemCount
 
@@ -43,6 +44,8 @@ class HomeFragment : Fragment() {
             tab.text = getString(pageAdapter.getTitle(position))
         }
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

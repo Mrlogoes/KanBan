@@ -35,6 +35,7 @@
                 app:tabIndicatorColor="@color/white"
                 app:tabSelectedTextColor="@color/black"
                 app:tabTextColor="@color/white"
+                app:tabTextAppearance="@style/CustomTabLayout"
                 />
                 <ImageButton
                     android:id="@+id/btnLogout"

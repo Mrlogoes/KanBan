@@ -47,7 +47,7 @@
                 tools:layout_constraintTop_toTopOf="parent"/>
 
             <EditText
-                android:id="@+id/editTextDescrição"
+                android:id="@+id/editTextDescricao"
                 android:layout_width="match_parent"
                 android:layout_height="48sp"
                 android:background="@drawable/bg_edit_text"

@@ -23,7 +23,7 @@ class TodoFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreted(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListeners()
     }

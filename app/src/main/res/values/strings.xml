@@ -40,6 +40,9 @@
     <string name="fazendo">Fazendo</string>
     <string name="feito">Feito</string>
     <string name="salvar">Salvar</string>
+    <string name="editar">Editar</string>
+    <string name="detalhes">Detalhes</string>
+    <string name="remover">Remover</string>
 
 
 </resources>

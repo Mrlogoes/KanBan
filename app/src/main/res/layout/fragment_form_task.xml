@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nova tarefa"
+                android:text="@string/nova_tarefa"
                 android:paddingTop="20dp"
                 android:textColor="@color/white"
                 android:layout_gravity="center_horizontal"/>
@@ -41,17 +41,19 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Descrição"
+                android:text="@string/descricao"
                 android:textColor="@color/white"
                 tools:layout_constraintStart_toStartOf="parent"
-                tools:layout_constraintTop_toTopOf="parent"/>
+                tools:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
 
             <EditText
                 android:id="@+id/editTextDescricao"
                 android:layout_width="match_parent"
                 android:layout_height="48sp"
                 style="@style/EditTextTheme"
-                android:hint="Informe sua nova Tarefa"
+                android:hint="@string/informe_sua_nova_tarefa"
                 tools:layout_constraintEnd_toEndOf="parent"
                 tools:layout_constraintStart_toStartOf="parent"
                 tools:layout_constraintTop_toBottomOf="@+id/textView"/>
@@ -61,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Status"
+                android:text="@string/status"
                 android:textColor="@color/white"
                 tools:layout_constraintStart_toStartOf="parent"
                 tools:layout_constraintTop_toBottomOf="@id/editTextDescrição"
@@ -85,7 +87,7 @@
                     android:id="@+id/rbTodo"
                     android:checked="true"
                     android:theme="@style/MyRadioButton"
-                    android:text="A Fazer"
+                    android:text="@string/a_fazer"
                     android:textColor="@color/white"/>
 
                 <RadioButton
@@ -94,7 +96,7 @@
                     android:buttonTint="@color/black"
                     android:id="@+id/rbDoing"
                     android:theme="@style/MyRadioButton"
-                    android:text="Fazendo"
+                    android:text="@string/fazendo"
                     android:textColor="@color/white"/>
 
                 <RadioButton
@@ -103,7 +105,7 @@
                     android:buttonTint="@color/black"
                     android:id="@+id/rbDone"
                     android:theme="@style/MyRadioButton"
-                    android:text="Feito"
+                    android:text="@string/feito"
                     android:textColor="@color/white"/>
 
 
@@ -116,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 style="@style/ButtonTheme"
-                android:text="Salvar"
+                android:text="@string/salvar"
                 app:layout_editor_absoluteX="16dp"
                 app:layout_editor_absoluteY="221dp"
                 app:layout_constraintEnd_toEndOf="parent"

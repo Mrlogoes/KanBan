@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Murilo Gomes Carvalho Góes"
+        android:text="@string/murilo_gomes_carvalho_g_es"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/LinearLayout"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,14 +31,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="E-mail"
+            android:text="@string/e_mail"
             android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/edt_text_email"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Digite seu e-mail"
+            android:hint="@string/digite_seu_e_mail"
             android:inputType="textEmailAddress"
             style="@style/EditTextTheme"
             android:layout_marginTop="4dp" />
@@ -46,7 +46,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Senha"
+            android:text="@string/senha"
             android:textColor="@color/white"
             android:layout_marginTop="16dp"/>
 
@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:inputType="textPassword"
-            android:hint="Digite sua senha"
+            android:hint="@string/digite_sua_senha"
             style="@style/EditTextTheme"
             android:layout_marginTop="4dp" />
 
@@ -63,7 +63,7 @@
             android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/login"
             style="@style/ButtonTheme"
             android:layout_marginTop="16dp" />
 
@@ -77,7 +77,7 @@
                 android:id="@+id/btnRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Criar Conta"
+                android:text="@string/criar_conta"
                 android:layout_weight="1"
                 android:textAlignment="textStart"
                 android:textColor="@color/white"/>
@@ -86,7 +86,7 @@
                 android:id="@+id/btnRecover"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recuperar Conta"
+                android:text="@string/recuperar_conta"
                 android:layout_weight="1"
                 android:textAlignment="textEnd"
                 android:textColor="@color/white"/>

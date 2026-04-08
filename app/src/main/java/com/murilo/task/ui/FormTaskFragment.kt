@@ -10,6 +10,7 @@ import com.murilo.task.R
 import com.murilo.task.databinding.FragmentFormTaskBinding
 import com.murilo.task.databinding.FragmentRecoverAccountBinding
 import com.murilo.task.util.initToolbar
+import com.murilo.task.util.showBottomSheet
 
 class FormTaskFragment : Fragment() {
 
@@ -43,7 +44,7 @@ class FormTaskFragment : Fragment() {
             Toast.makeText(requireContext(), "Tudo OK!", Toast.LENGTH_SHORT).show()
         }
         else {
-            Toast.makeText(requireContext(), "Preencha um descrição!", Toast.LENGTH_SHORT).show()
+           showBottomSheet(message = getString(R.string.description_empty_form_task_fragment))
         }
     }
 

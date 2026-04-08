@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.murilo.task.R
 import com.murilo.task.databinding.FragmentRegisterBinding
 import com.murilo.task.util.initToolbar
-
+import com.murilo.task.util.showBottomSheet
 
 
 class RegisterFragment : Fragment() {
@@ -52,10 +52,10 @@ class RegisterFragment : Fragment() {
             if (senha.isNotBlank()) {
                 Toast.makeText(requireContext(), "Tudo OK!", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(requireContext(), "preencha a senha!", Toast.LENGTH_SHORT).show()
+                showBottomSheet(message = getString(R.string.password_empty_register_fragment))
             }
         } else {
-            Toast.makeText(requireContext(), "Preencha seu email!", Toast.LENGTH_SHORT).show()
+            showBottomSheet(message = getString(R.string.email_empty_register_fragment))
         }
     }
 }

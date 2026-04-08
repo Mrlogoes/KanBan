@@ -9,6 +9,7 @@ import android.widget.Toast
 import com.murilo.task.R
 import com.murilo.task.databinding.FragmentRecoverAccountBinding
 import com.murilo.task.util.initToolbar
+import com.murilo.task.util.showBottomSheet
 
 class RecoverAccountFragment : Fragment() {
 
@@ -43,7 +44,7 @@ class RecoverAccountFragment : Fragment() {
             Toast.makeText(requireContext(), "Tudo OK!", Toast.LENGTH_SHORT).show()
         }
         else {
-            Toast.makeText(requireContext(), "Preencha um email válido!", Toast.LENGTH_SHORT).show()
+            showBottomSheet(message = getString(R.string.email_empty))
         }
     }
 

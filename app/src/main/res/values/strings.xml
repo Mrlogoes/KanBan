@@ -43,6 +43,7 @@
     <string name="editar">Editar</string>
     <string name="detalhes">Detalhes</string>
     <string name="remover">Remover</string>
+    <string name="add_task">Add task</string>
 
 
 </resources>

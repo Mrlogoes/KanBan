@@ -1,28 +1,25 @@
 package com.murilo.task.ui.adapter
 
-import android.view.View
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.murilo.task.data.model.Task
 import com.murilo.task.databinding.ItemTaskBinding
 
-class TaskAdapter: RecyclerView.Adapter<TaskAdapter.MyViewHolder> () {
+class TaskAdapter(
+    private val taskList: List<Task>
+): RecyclerView.Adapter<TaskAdapter.MyViewHolder> () {
 
-    override fun onCreateViewHolder(
-        p0: ViewGroup,
-        p1: Int
-    ): MyViewHolder {
-        TODO("Not yet implemented")
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val view = ItemTaskBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MyViewHolder(view)
     }
 
-    override fun onBindViewHolder(
-        p0: MyViewHolder,
-        p1: Int
-    ) {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount() = taskList.size
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        val task = taskList[position]
+        holder.binding.textDescription.text = task.description
     }
 
 

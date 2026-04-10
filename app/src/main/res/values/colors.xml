@@ -2,8 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="color_default">#91DC74</color>
     <color name="blue">#2196F3</color>
+
+    <color name="color_default">#91DC74</color>
     <color name="color_delete">#A61E1E</color>
     <color name="color_details">#53D4E7</color>
+
+    <color name="color_status_todo">#FF5722</color>
+    <color name="color_status_done">#4CAF50</color>
 </resources>

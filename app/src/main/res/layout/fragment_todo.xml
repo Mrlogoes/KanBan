@@ -25,7 +25,7 @@
         android:contentDescription="@string/add_task"
         android:clickable="true"
         android:src="@drawable/ic_adicionartask"
-        android:tint="@color/color_default"
+        android:tint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

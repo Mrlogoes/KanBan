@@ -57,5 +57,6 @@
         android:id="@+id/formTaskFragment"
         android:name="com.murilo.task.ui.FormTaskFragment"
         android:label="fragment_form_task"
-        tools:layout="@layout/fragment_form_task" />
+        tools:layout="@layout/fragment_form_task"
+        />
 </navigation>

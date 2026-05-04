@@ -6,8 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.FormTaskFragment"
     android:padding="20dp"
-    android:fillViewport="true"
-    android:background="@color/color_default">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,8 +43,10 @@
                 android:layout_height="wrap_content"
                 android:text="@string/descricao"
                 android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                tools:layout_constraintStart_toStartOf="parent"
+                tools:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
 
             <EditText
                 android:id="@+id/editTextDescricao"
@@ -53,9 +54,9 @@
                 android:layout_height="48sp"
                 style="@style/EditTextTheme"
                 android:hint="@string/informe_sua_nova_tarefa"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"/>
+                tools:layout_constraintEnd_toEndOf="parent"
+                tools:layout_constraintStart_toStartOf="parent"
+                tools:layout_constraintTop_toBottomOf="@+id/textView"/>
 
             <TextView
                 android:id="@+id/textViewStatus"
@@ -64,8 +65,9 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/status"
                 android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editTextDescricao" />
+                tools:layout_constraintStart_toStartOf="parent"
+                tools:layout_constraintTop_toBottomOf="@id/editTextDescrição"
+                />
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -73,12 +75,12 @@
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal"
                 android:id="@+id/radioGroup"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewStatus">
+                tools:layout_constraintEnd_toEndOf="parent"
+                tools:layout_constraintStart_toStartOf="parent"
+                tools:layout_constraintTop_toBottomOf="@+id/textViewStatus">
 
                 <RadioButton
-                    android:layout_width="0dp"
+                    android:layout_width="88dp"
                     android:layout_height="48dp"
                     android:buttonTint="@color/black"
                     android:layout_weight="1"
@@ -89,20 +91,18 @@
                     android:textColor="@color/white"/>
 
                 <RadioButton
-                    android:layout_width="0dp"
+                    android:layout_width="88dp"
                     android:layout_height="48dp"
                     android:buttonTint="@color/black"
-                    android:layout_weight="1"
                     android:id="@+id/rbDoing"
                     android:theme="@style/MyRadioButton"
                     android:text="@string/fazendo"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"/>
 
                 <RadioButton
-                    android:layout_width="0dp"
+                    android:layout_width="88dp"
                     android:layout_height="48dp"
                     android:buttonTint="@color/black"
-                    android:layout_weight="1"
                     android:id="@+id/rbDone"
                     android:theme="@style/MyRadioButton"
                     android:text="@string/feito"
@@ -119,6 +119,8 @@
                 android:layout_marginTop="16dp"
                 style="@style/ButtonTheme"
                 android:text="@string/salvar"
+                app:layout_editor_absoluteX="16dp"
+                app:layout_editor_absoluteY="221dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup"
@@ -132,6 +134,8 @@
                 android:layout_gravity="center"
                 android:indeterminateTint="@color/white"
                 android:visibility="invisible"
+                app:layout_editor_absoluteY="278dp"
+                app:layout_editor_absoluteX="152dp"
                 tools:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

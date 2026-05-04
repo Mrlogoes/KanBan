@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "365682698308",
+    "project_id": "kanban-af236",
+    "storage_bucket": "kanban-af236.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365682698308:android:d83dbce886f078a2ccf411",
+        "android_client_info": {
+          "package_name": "com.murilo.task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfR7m2xIYtsbmS9Te3XBWAN0OyniUESUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -44,6 +44,8 @@
     <string name="detalhes">Detalhes</string>
     <string name="remover">Remover</string>
     <string name="add_task">Add task</string>
+    <string name="tabs">Tabs</string>
+    <string name="logout">Logout</string>
 
 
 </resources>

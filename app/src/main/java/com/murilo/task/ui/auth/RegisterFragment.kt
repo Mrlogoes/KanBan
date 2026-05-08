@@ -1,11 +1,13 @@
 package com.murilo.task.ui.auth
 
 import android.os.Bundle
+import android.util.Log.e
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.murilo.task.R
@@ -54,6 +56,8 @@ class RegisterFragment : Fragment() {
         if (email.isNotBlank()) {
             if (senha.isNotBlank()) {
                 Toast.makeText(requireContext(), "Tudo OK!", Toast.LENGTH_SHORT).show()
+                binding.progressBar.isVisible = true
+                registerUser(email, senha)
             } else {
                 showBottomSheet(message = getString(R.string.password_empty_register_fragment))
             }
@@ -61,5 +65,27 @@ class RegisterFragment : Fragment() {
             showBottomSheet(message = getString(R.string.email_empty_register_fragment))
         }
     }
+
+    private fun registerUser(email: String, password: String) {
+        try {
+            val auth = FirebaseAuth.getInstance()
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        findNavController().navigate(R.id.action_global_homeFragment)
+                    } else {
+                        binding.progressBar.isVisible = false
+
+                        Toast.makeText(requireContext(),task.exception?.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+        }
+        catch(e: Exception) {
+            Toast.makeText(requireContext(),e.message.toString(), Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }
+
 

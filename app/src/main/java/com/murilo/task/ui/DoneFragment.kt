@@ -33,15 +33,18 @@ class DoneFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initRecyclerViewTask(getTask())
+        initRecyclerViewTask()
+        getTask()
     }
 
-    private fun initRecyclerViewTask(taskList: List<Task>) {
-        taskAdapter = TaskAdapter(requireContext(), taskList) { task, option -> optionSelected(task,option)}
-        binding.recyclerViewTask.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewTask.setHasFixedSize(true)
+    private fun initRecyclerViewTask() {
+        taskAdapter = TaskAdapter(requireContext() ) { task, option -> optionSelected(task,option)}
 
-        binding.recyclerViewTask.adapter = taskAdapter
+        with(binding.recyclerViewTask) {
+            layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
+            adapter = taskAdapter
+        }
     }
 
     private fun optionSelected(task: Task, option: Int) {
@@ -60,11 +63,15 @@ class DoneFragment : Fragment() {
             }
         }
     }
-    private fun getTask() = listOf(
-        Task("8", "Configurar projeto inicial", Status.DONE),
-        Task("9", "Criar estrutura de navegação", Status.DONE),
-        Task("10", "Definir tema e cores do app", Status.DONE)
-    )
+
+    private fun getTask() {
+        val taskList = listOf(
+            Task("8", "Configurar projeto inicial", Status.DONE),
+            Task("9", "Criar estrutura de navegação", Status.DONE),
+            Task("10", "Definir tema e cores do app", Status.DONE)
+        )
+        taskAdapter.submitList(taskList)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -32,15 +32,18 @@ class DoingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initRecyclerViewTask(getTask())
+        initRecyclerViewTask()
+        getTask()
     }
 
-    private fun initRecyclerViewTask(taskList: List<Task>) {
-        taskAdapter = TaskAdapter(requireContext(), taskList) { task, option -> optionSelected(task,option)}
-        binding.recyclerViewTask.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewTask.setHasFixedSize(true)
+    private fun initRecyclerViewTask() {
+        taskAdapter = TaskAdapter(requireContext() ) { task, option -> optionSelected(task,option)}
 
-        binding.recyclerViewTask.adapter = taskAdapter
+        with(binding.recyclerViewTask) {
+            layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
+            adapter = taskAdapter
+        }
     }
 
     private fun optionSelected(task: Task, option: Int) {
@@ -62,11 +65,14 @@ class DoingFragment : Fragment() {
             }
         }
     }
-    private fun getTask() = listOf(
-        Task("5", "Implementar integração com API", Status.DOING),
-        Task("6", "Ajustar layout da tela principal", Status.DOING),
-        Task("7", "Refatorar código de autenticação", Status.DOING)
-    )
+    private fun getTask() {
+        val taskList = listOf(
+            Task("5", "Implementar integração com API", Status.DOING),
+            Task("6", "Ajustar layout da tela principal", Status.DOING),
+            Task("7", "Refatorar código de autenticação", Status.DOING)
+        )
+        taskAdapter.submitList(taskList)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

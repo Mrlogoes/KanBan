@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.murilo.task.R
@@ -54,6 +55,7 @@ class LoginFragment : Fragment() {
         val senha = binding.edtTextSenha.text.toString().trim()
         if(email.isNotBlank()) {
             if(senha.isNotBlank()) {
+                binding.progressBar.isVisible = true
                 loginUser(email,senha)
             }
             else {
@@ -73,6 +75,7 @@ class LoginFragment : Fragment() {
                     if(task.isSuccessful) {
                         findNavController().navigate(R.id.action_global_homeFragment)
                     } else {
+                        binding.progressBar.isVisible = false
                         Toast.makeText(requireContext(), task.exception?.message, Toast.LENGTH_SHORT).show()
                     }
                 }

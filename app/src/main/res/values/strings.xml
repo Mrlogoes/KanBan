@@ -49,6 +49,7 @@
     <string name="text_button_dialog_confirm_logout">Confirmar</string>
     <string name="text_title_dialog_comfira_logout">Deseja sair da sua conta?</string>
     <string name="text_message_dialog_confirm_logout">Aperte em confirmar para sair da sua conta</string>
+    <string name="text_message_recover_account_fragment">Recuperar Conta</string>
 
 
 </resources>

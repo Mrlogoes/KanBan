@@ -50,6 +50,8 @@
     <string name="text_title_dialog_comfira_logout">Deseja sair da sua conta?</string>
     <string name="text_message_dialog_confirm_logout">Aperte em confirmar para sair da sua conta</string>
     <string name="text_message_recover_account_fragment">Recuperar Conta</string>
+    <string name="text_save_sucess_form_task_fragment">Exito! Tarefa salva com sucesso!</string>
+    <string name="error_generic">Erro. Tente novamente!</string>
 
 
 </resources>

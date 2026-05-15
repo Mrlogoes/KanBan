@@ -5,7 +5,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Task (
-    val id: String,
-    val description: String,
-    val status: Status = Status.TODO
+    //alterei as variáveis para "var" para que elas possam compor o validadeData no FormTaskFragment, originalmente eram "val"
+    var id: String ="",
+    var description: String ="",
+    var status: Status = Status.TODO
 ): Parcelable

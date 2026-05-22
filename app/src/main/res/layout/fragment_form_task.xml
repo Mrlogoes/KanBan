@@ -66,7 +66,7 @@
                 android:text="@string/status"
                 android:textColor="@color/white"
                 tools:layout_constraintStart_toStartOf="parent"
-                tools:layout_constraintTop_toBottomOf="@id/editTextDescrição"
+                tools:layout_constraintTop_toBottomOf="@id/editTextDescricao"
                 />
 
             <RadioGroup
@@ -82,7 +82,7 @@
                 <RadioButton
                     android:layout_width="88dp"
                     android:layout_height="48dp"
-                    android:buttonTint="@color/black"
+                    android:buttonTint="@color/white"
                     android:layout_weight="1"
                     android:id="@+id/rbTodo"
                     android:checked="true"
@@ -93,7 +93,8 @@
                 <RadioButton
                     android:layout_width="88dp"
                     android:layout_height="48dp"
-                    android:buttonTint="@color/black"
+                    android:buttonTint="@color/white"
+                    android:layout_weight="1"
                     android:id="@+id/rbDoing"
                     android:theme="@style/MyRadioButton"
                     android:text="@string/fazendo"
@@ -102,7 +103,8 @@
                 <RadioButton
                     android:layout_width="88dp"
                     android:layout_height="48dp"
-                    android:buttonTint="@color/black"
+                    android:buttonTint="@color/white"
+                    android:layout_weight="1"
                     android:id="@+id/rbDone"
                     android:theme="@style/MyRadioButton"
                     android:text="@string/feito"

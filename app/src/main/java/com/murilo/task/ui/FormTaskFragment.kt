@@ -76,8 +76,10 @@ class FormTaskFragment : Fragment() {
         if(description.isNotBlank()) {
             binding.progressBar.isVisible = true
 
-            if(newTask) task = Task()
-            task.id = reference.database.reference.push().key ?: ""
+            if(newTask) {
+                task = Task()
+                task.id = reference.database.reference.push().key ?: ""
+            }
             task.description = description
             task.status = status
             

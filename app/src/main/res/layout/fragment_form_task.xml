@@ -35,7 +35,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16sp">
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/textView"
@@ -43,20 +43,19 @@
                 android:layout_height="wrap_content"
                 android:text="@string/descricao"
                 android:textColor="@color/white"
-                tools:layout_constraintStart_toStartOf="parent"
-                tools:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="16dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/editTextDescricao"
-                android:layout_width="match_parent"
-                android:layout_height="48sp"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
                 style="@style/EditTextTheme"
                 android:hint="@string/informe_sua_nova_tarefa"
-                tools:layout_constraintEnd_toEndOf="parent"
-                tools:layout_constraintStart_toStartOf="parent"
-                tools:layout_constraintTop_toBottomOf="@+id/textView"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"/>
 
             <TextView
                 android:id="@+id/textViewStatus"
@@ -65,8 +64,8 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/status"
                 android:textColor="@color/white"
-                tools:layout_constraintStart_toStartOf="parent"
-                tools:layout_constraintTop_toBottomOf="@id/editTextDescricao"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextDescricao"
                 />
 
             <RadioGroup
@@ -75,9 +74,9 @@
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal"
                 android:id="@+id/radioGroup"
-                tools:layout_constraintEnd_toEndOf="parent"
-                tools:layout_constraintStart_toStartOf="parent"
-                tools:layout_constraintTop_toBottomOf="@+id/textViewStatus">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewStatus">
 
                 <RadioButton
                     android:layout_width="88dp"

@@ -87,9 +87,21 @@ class TodoFragment : Fragment() {
         }
     }
 
-    private fun getTask() {
+
+//    private fun getTask() {
+//        val taskList = listOf(
+//            Task("0", "Resolver problemas da tela de carregamento infinito", Status.TODO),
+//            Task("1", "Terminar o CRUD", Status.TODO),
+//            Task("2", "Criar um login no banco de dados", Status.TODO),
+//            Task("3", "Efetuar a autenticação do AgregaRural", Status.TODO),
+//            Task("4", "Verificar o Layout", Status.TODO)
+//        )
+//    }
+
+
+private fun getTask() {
         reference
-            .child("tasks")
+            .child("task")
             .child(auth.currentUser?.uid ?: "")
             .addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(p0: DataSnapshot) {
@@ -109,6 +121,8 @@ class TodoFragment : Fragment() {
 
             })
     }
+
+
 
 
     override fun onDestroyView() {

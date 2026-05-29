@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.Firebase
@@ -21,6 +23,7 @@ import com.murilo.task.data.model.Task
 import com.murilo.task.databinding.FragmentTodoBinding
 import com.murilo.task.ui.adapter.TaskAdapter
 import com.google.firebase.database.ValueEventListener
+import com.murilo.task.util.showBottomSheet
 
 class TodoFragment : Fragment() {
 
@@ -73,7 +76,13 @@ class TodoFragment : Fragment() {
     private fun optionSelected(task: Task, option: Int) {
         when (option) {
             TaskAdapter.SELECT_REMOVER -> {
-                Toast.makeText(requireContext(), "Removendo ${task.description}", Toast.LENGTH_SHORT).show()
+                showBottomSheet(titleDialog = R.string.text_title_dialog_delete,
+                    message = getString(R.string.text_message_dialog_delete),
+                    titleButton = R.string.text_button_dialog_confirm,
+                    onClick = {
+                        deleteTask(task)
+                    }
+                )
             }
             TaskAdapter.SELECT_EDIT -> {
                 Toast.makeText(requireContext(), "Editando ${task.description}", Toast.LENGTH_SHORT).show()
@@ -109,8 +118,15 @@ private fun getTask() {
 
                     for (ds in p0.children) {
                         val task = ds.getValue(Task::class.java) as Task
-                        taskList.add(task)
+
+                        if(task.status == Status.TODO) {
+                            taskList.add(task)
+                        }
                     }
+                    binding.progressBar.isVisible = false
+                    listEmpty(taskList)
+
+                    taskList.reverse()
                     taskAdapter.submitList(taskList)
                 }
 
@@ -120,6 +136,28 @@ private fun getTask() {
 
 
             })
+    }
+
+    private fun deleteTask(task: Task) {
+        reference
+            .child("task")
+            .child(auth.currentUser?.uid ?: "")
+            .child(task.id)
+            .removeValue().addOnCompleteListener { result ->
+                if(result.isSuccessful) {
+                    Toast.makeText(requireContext(), R.string.text_delete_sucess_task, Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(requireContext(),R.string.error_generic, Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+    private fun listEmpty(taskList: List<Task>) {
+        binding.textInfo.text = if (taskList.isEmpty()) {
+            getString(R.string.text_list_task_empty)
+        }else{
+            ""
+        }
     }
 
 
